@@ -1,0 +1,11 @@
+01.format-phenotypes.R
+02.gemma.sh
+03.results.R
+DaystoSilk_IQR.txt
+DaystoSilk_IQR_MainEffect.log
+DaystoSilk_IQR_Slope.log
+DaystoSilk_IQR_VarE.log
+gemma_MainEffect.png
+gemma_Slope.png
+gemma_VarE.png
+nohup.out

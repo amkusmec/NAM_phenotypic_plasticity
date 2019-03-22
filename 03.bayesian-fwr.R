@@ -1,41 +1,36 @@
 setwd("~/gxe-gwas2")
-# Master process ID: 51635
+# Master process ID: 40691
 
-library(tibble)
+source("00.load-packages.R")
+library(parallel)
 library(doParallel)
 library(foreach)
 library(iterators)
 
 # Set-up control variables for parallel processing
-ncores <- 12
-cl <- makeCluster(ncores, outfile = "logs/bayesian_fwr.log")
+ncores <- 23
+cl <- makeCluster(ncores, outfile = "logs/bayesian_fwr_IQR.log")
 registerDoParallel(cl)
 
 # Load the trait matrix and split into a list
-traitMatrix <- readRDS("data/tidy_traitMatrix.rds")
+traitMatrix <- readRDS("data/tidy_traitMatrix_IQR_AK.rds")
 phenos <- unique(traitMatrix$Phenotype)
-traitList <- vector(mode = "list")
-for (ph in phenos) {
-  traitList[[ph]] <- subset(traitMatrix, Phenotype == ph)
-}
+traitList <- split(traitMatrix, traitMatrix$Phenotype)
 
 ### Bayesian FWR in parallel
 # Control variables
-burnin <- 5000
-niter <- 50000
+burnin <- 1000
+niter <- 51000
 
-# Random seeds (chosen by running `round(runif(1, 1, 10^8))` in the console)
-seeds <- 34884870 + seq(0, ncores - 1)
+# Random seeds
+seeds <- 47060859 + seq(0, ncores - 1)
 
-fw <- foreach(ph = iter(traitList), s = iter(seeds), .packages = 'FW') %dopar% {
-  p <- unique(ph$Phenotype)
-  with(ph, FW(y = Measure, VAR = Genotype, ENV = Environment, seed = s,
-              method = "Gibbs", nIter = niter, burnIn = burnin, 
-              saveAt = paste0("gibbs-samples/", p, "-Gibbs")))
+fw <- foreach(ph = 1:23, .packages = 'FW') %dopar% {
+    result <- with(traitList[[ph]], 
+                   FW(y = Measure, VAR = Genotype, ENV = Environment, seed = seeds[ph],
+                      method = "Gibbs", nIter = niter, burnIn = burnin, 
+                      saveAt = paste0("data/gibbs-samples/", phenos[ph], "_IQR-Gibbs")))
+    saveRDS(result, paste0("data/fwr-results/", phenos[ph], "_IQR-fwr.rds"))
 }
 
 stopCluster(cl)
-
-# Save the results list
-names(fw) <- phenos
-saveRDS(fw, "data/fwr_results.rds")

@@ -1,3 +1,5 @@
+### Assemble main text Figure 3.
+
 source("00.load-packages.R")
 library(grid)
 library(gridExtra)

@@ -1,3 +1,7 @@
+### Create a tidy version of the NAM/282 phenotype matrix from panzea.org
+### Observations are removed if they fall outside the +/- 1.5* interquartile
+### range for each RIL and each environment.
+
 source("00.load-packages.R")
 
 

@@ -1,3 +1,6 @@
+### Annotate SNPs by proximity to B73 RefGenv2 gene models and MNase
+### hypersensitivity sites.
+
 source("00.load-packages.R")
 library(GenomicRanges)
 

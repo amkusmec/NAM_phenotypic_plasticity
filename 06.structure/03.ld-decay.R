@@ -1,3 +1,5 @@
+### Summarize and plot LD decay for each chromosome in the NAM population.
+
 source("00.load-packages.R")
 
 ld <- read_tsv("nam_ld.ld") %>%

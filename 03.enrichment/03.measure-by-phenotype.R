@@ -1,3 +1,6 @@
+### Visualize the proportion of significant SNPs for each phenotype that are
+### significant for different measures of the phenotype.
+
 source("00.load-packages.R")
 library(scales)
 

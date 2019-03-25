@@ -1,5 +1,7 @@
 #!/bin/bash
 
+# Construct annotation-specific kinship matrices using GCTA
+
 cd ~/gxe-gwas2/data/kinship-matrices
 
 ../../lib/gcta/gcta64 --bfile ../geno_2M_all --extract 5kbdownstream-snps.txt --make-grm-bin --out 5kbdownstream > ../../logs/kinship-5kbdownstream.log &

@@ -1,3 +1,5 @@
+### Create lists of SNPs that fall in different annotation categories.
+
 source("00.load-packages.R")
 
 anno <- readRDS("data/snp-annotations.rds")

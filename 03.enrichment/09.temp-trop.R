@@ -1,3 +1,6 @@
+### Test for differences in plasticity for flowering time between RILs
+### derived from temperate and tropical germplasm.
+
 source("00.load-packages.R")
 library(lawstat)
 

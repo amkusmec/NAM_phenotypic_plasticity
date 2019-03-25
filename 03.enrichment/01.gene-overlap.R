@@ -1,3 +1,6 @@
+### Check for overlapping candidate genes between main effect, slope, and
+### residual variance categories. Perform enrichment tests for overlaps.
+
 source("00.load-packages.R")
 library(VennDiagram)
 

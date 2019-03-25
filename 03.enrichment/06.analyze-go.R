@@ -1,3 +1,5 @@
+### Plot overlaps of significant GO terms (at FDR <= 0.01) for all ontologies.
+
 source("00.load-packages.R")
 library(VennDiagram)
 

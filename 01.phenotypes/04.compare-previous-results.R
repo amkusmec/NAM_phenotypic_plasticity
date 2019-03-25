@@ -1,3 +1,6 @@
+### Compare results of regressions for the IQR-filtered phenotypes against
+### regressions without IQR-filtering.
+
 source("00.load-packages.R")
 
 # Load and prep data ------------------------------------------------------

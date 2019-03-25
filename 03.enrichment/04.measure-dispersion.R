@@ -1,3 +1,5 @@
+### Calculate quartile coefficient of dispersion for the plasticity measures.
+
 source("00.load-packages.R")
 
 

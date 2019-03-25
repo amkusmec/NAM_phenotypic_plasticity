@@ -1,3 +1,5 @@
+### Compute q-values for FDR calculation.
+
 source("00.load-packages.R")
 library(qvalue)
 

@@ -1,3 +1,6 @@
+### Gene Ontology term enrichment for all 3 ontologies using annotations on
+### Arabidopsis orthologs and the hypergeometric test.
+
 source("00.load-packages.R")
 
 

@@ -1,3 +1,6 @@
+### Assess the amount of overlap between this project and Wallace et al. (2014)
+### based on permutation tests.
+
 source("00.load-packages.R")
 library(GenomicRanges)
 library(scales)

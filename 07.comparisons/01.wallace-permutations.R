@@ -1,3 +1,7 @@
+### Generate empirical distributions for the overlap between this project's
+### results and those reported in Wallace et al. (2014) for 14 phenotypes.
+### Permutations are controlled by SNP annotation.
+
 source("00.load-packages.R")
 library(GenomicRanges)
 library(doParallel)

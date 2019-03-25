@@ -1,3 +1,5 @@
+### Check the distribution of the residuals for each phenotype.
+
 source("00.load-packages.R")
 library(car)
 

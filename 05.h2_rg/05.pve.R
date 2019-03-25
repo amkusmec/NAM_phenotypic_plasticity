@@ -1,3 +1,6 @@
+### Process LDAK output and summarise the estimated genomic heritabilities
+### by annotation category.
+
 source("00.load-packages.R")
 library(scales)
 library(RColorBrewer)

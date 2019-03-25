@@ -1,3 +1,6 @@
+### Plot the first 3 principal components of the genotype matrix. The NAM
+### family structure is clearly captured by these components.
+
 library(stringr)
 library(scatterplot3d)
 

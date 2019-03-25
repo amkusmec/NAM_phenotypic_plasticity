@@ -1,3 +1,6 @@
+### Plot the variance component for Finlay-Wilkinson regression slope versus
+### the minimum number of environments for each phenotype.
+
 library(tidyverse)
 library(stringr)
 

@@ -1,3 +1,7 @@
+### Prepare the genotypes for analysis using FarmCPUpp. Using `bigmemory` and
+### save a binary copy of the matrix allows it to be used for parallel
+### processing and for faster loading.
+
 setwd("~/gxe-gwas2/data")
 
 library(bigmemory)

@@ -1,3 +1,6 @@
+### Run Bayesian Finlay-Wilkinson regression for all 23 phenotypes.
+### This code assumes that you have 23 cores to run all regressions in parallel.
+
 source("00.load-packages.R")
 library(parallel)
 library(doParallel)

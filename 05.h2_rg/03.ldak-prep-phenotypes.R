@@ -1,3 +1,6 @@
+### Reformat phenotypes and covariates for LDAK. This also generates a script
+### to run LDAK on all the phenotypes.
+
 source("00.load-packages.R")
 
 

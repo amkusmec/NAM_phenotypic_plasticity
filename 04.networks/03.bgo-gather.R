@@ -1,3 +1,5 @@
+### Gather the processed BINGO output and summarize it.
+
 setwd("~/gxe-gwas2/data/bgo-edit")
 source("../../00.load-packages.R")
 

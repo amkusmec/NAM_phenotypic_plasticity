@@ -1,3 +1,5 @@
+### Idenfity significant SNPs at FDR <= 1%.
+
 setwd("~/gxe-gwas2/gwas-results-iqr")
 
 source("../00.load-packages.R")

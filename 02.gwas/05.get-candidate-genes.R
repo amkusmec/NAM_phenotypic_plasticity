@@ -1,3 +1,6 @@
+### Identify candidate genes that are within 10,000 bp up/downstream of each
+### significant SNP.
+
 setwd("~/gxe-gwas2/gwas-results-iqr")
 
 source("../00.load-packages.R")

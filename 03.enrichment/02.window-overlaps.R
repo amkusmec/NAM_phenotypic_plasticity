@@ -1,3 +1,8 @@
+### Check for overlapping significance windows between main effects and either/
+### both of slope and residual variance. The script tests multiple window sizes
+### to evaluate the robustness of the observation that there are very few
+### overlaps.
+
 source("00.load-packages.R")
 library(GenomicRanges)
 

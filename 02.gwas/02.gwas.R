@@ -1,3 +1,6 @@
+### Perform GWAS using FarmCPUpp. The script is configured to be run from the
+### command line so that multiple phenotypes can be analyzed at once.
+
 setwd("~/gxe-gwas2/data")
 library(bigmemory)
 library(FarmCPUpp)

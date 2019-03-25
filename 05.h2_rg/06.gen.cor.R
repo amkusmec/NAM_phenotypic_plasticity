@@ -1,3 +1,6 @@
+### Compute multivariate additive genetic correlations for each phenotype's 
+### components using SOMMER.
+
 library(tidyverse)
 library(sommer)
 

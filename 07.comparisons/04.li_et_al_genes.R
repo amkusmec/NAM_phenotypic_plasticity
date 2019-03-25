@@ -1,3 +1,6 @@
+### Count the number of candidate genes falling in QTL mapping confidence
+### intervals from Li et al.
+
 library(GenomicRanges)
 cv <- read.csv("data/floweringcv_qtl.csv")
 cv <- subset(cv, DACV == "_" | DSCV == "_")

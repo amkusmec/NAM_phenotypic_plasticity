@@ -1,3 +1,5 @@
+### Manhattan and QQ plots for all GWAS results.
+
 source("00.load-packages.R")
 library(FarmCPUpp)
 library(qvalue)

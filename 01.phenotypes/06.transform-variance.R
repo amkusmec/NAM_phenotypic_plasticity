@@ -1,3 +1,5 @@
+### Natural log-transform the residuals for each phenotype.
+
 source("00.load-packages.R")
 
 # Data files and phenotype list -------------------------------------------

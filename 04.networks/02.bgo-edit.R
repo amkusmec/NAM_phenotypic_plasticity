@@ -1,3 +1,6 @@
+### Process BINGO output files from Cytoscape. This part of the analysis will
+### have to be done by hand.
+
 source("../00.load-packages.R")
 
 for (o in c("bp", "mf", "cc")) {

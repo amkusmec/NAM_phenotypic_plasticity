@@ -1,3 +1,7 @@
+### Calculate two derived phenotypes:
+###  1) KernelDepth = EarDiameter - CobDiameter
+###  2) HeightAboveEar = PlantHeight - EarHeight
+
 source("00.load-packages.R")
 
 # Load the trait matrix

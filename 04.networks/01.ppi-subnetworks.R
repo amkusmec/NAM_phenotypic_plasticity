@@ -1,3 +1,7 @@
+### Process a Zea mays protein-protein interaction network. Each subnetwork
+### was constructed by extracting candidate genes and their primary
+### interaction partners.
+
 source("00.load-packages.R")
 
 

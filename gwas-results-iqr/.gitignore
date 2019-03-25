@@ -1,0 +1,8 @@
+candidate-genes.rds
+gene-overlap-enrichment.rds
+genetic-correlations.rds
+go-enrichment.rds
+go-term-overlaps.rds
+sig-snps.rds
+snp-enrichment.rds
+windows.rds

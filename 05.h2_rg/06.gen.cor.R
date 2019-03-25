@@ -1,10 +1,8 @@
-setwd("~/gxe-gwas2")
-
 library(tidyverse)
 library(sommer)
 
 # Prepare the kinship matrix
-A.mat <- read.table("~/gxe-gwas/data/geno_9k_kin.txt", header = FALSE, skip = 1)
+A.mat <- read.table("data/geno_9k_kin.txt", header = FALSE, skip = 1)
 taxa <- A.mat[, 1]
 A.mat <- as.matrix(A.mat[, -1])
 rownames(A.mat) <- taxa; colnames(A.mat) <- taxa
@@ -27,16 +25,3 @@ gen_cor <- list.files("data/phenotypes", "*_IQR.rds", full.names = TRUE) %>%
   })
 
 saveRDS(gen_cor, "gwas-results-iqr/genetic-correlations.rds")
-
-
-
-Y <- readRDS("data/phenotypes/DaystoSilk_IQR.rds")
-Y <- Y[!is.na(Y[, 2]),]
-me <- Y$DaystoSilkMainEffect
-sl <- Y$DaystoSilkSlope
-ve <- Y$DaystoSilkVarE
-taxa <- Y$Taxa
-idx <- match(taxa, rownames(A.mat), nomatch = 0)
-A.mat <- A.mat[idx, idx]
-ans.A <- mmer2(cbind(DaystoSilkMainEffect, DaystoSilkSlope, DaystoSilkVarE) ~ 1, 
-               random = ~ g(Taxa), G = list(Taxa = A.mat), data = Y, MVM = TRUE)

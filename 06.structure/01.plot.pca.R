@@ -1,9 +1,7 @@
-setwd("~/gxe-gwas2")
-
 library(stringr)
 library(scatterplot3d)
 
-pca <- readRDS("~/gxe-gwas/data/covariates6k.rds")
+pca <- readRDS("data/covariates6k.rds")
 pca <- subset(pca, !grepl("M", pca$taxa))
 pca$fid <- unlist(str_split(pca$taxa, "E"))[seq(1, 2*nrow(pca), 2)]
 pca$fid <- factor(pca$fid)

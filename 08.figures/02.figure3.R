@@ -1,11 +1,9 @@
-setwd("~/gxe-gws2")
-
 source("00.load-packages.R")
 library(grid)
 library(gridExtra)
 
-source("15.measure-by-phenotype.R")
-source("22.wallace-overlaps.R")
+source("03.enrichment/03.measure-by-phenotype.R")
+source("07.comparisons/03.wallace-overlaps.R")
 
 lay <- matrix(c(1, 1, 1, 2, 2), nrow = 1)
 grob1 <- grobTree(ggplotGrob(f3a), 

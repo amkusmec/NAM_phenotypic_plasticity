@@ -1,5 +1,3 @@
-setwd("~/gxe-gwas2")
-
 source("00.load-packages.R")
 
 
@@ -15,7 +13,7 @@ for (ph in phenos) {
 
 
 # Reformat the principal components ---------------------------------------
-readRDS("~/gxe-gwas/data/covariates6k.rds") %>%
+readRDS("data/covariates6k.rds") %>%
   mutate(fid = taxa) %>%
   select(fid, taxa:PC3) %>%
   write_tsv(., path = "data/nam3pc.qcovar", col_names = FALSE)
@@ -48,4 +46,4 @@ for (ph in phenos) {
   }
 }
 
-writeLines(txt, "31.ldak.sh")
+writeLines(txt, "04.ldak.sh")

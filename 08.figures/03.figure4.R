@@ -1,11 +1,9 @@
-setwd("~/gxe-gwas2")
-
 source("00.load-packages.R")
 library(grid)
 library(gridExtra)
 library(VennDiagram)
 
-source("14.window-overlaps.R")
+source("03.enrichment/02.window-overlaps.R")
 
 
 # Gene overlaps -----------------------------------------------------------

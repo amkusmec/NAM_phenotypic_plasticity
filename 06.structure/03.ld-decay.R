@@ -1,5 +1,3 @@
-setwd("~/gxe-gwas2")
-
 source("00.load-packages.R")
 
 ld <- read_tsv("nam_ld.ld") %>%
@@ -16,6 +14,3 @@ ggplot(ld, aes(x = distance, y = R2)) +
   labs(x = "Distance (kb)", y = expression(r^2))
 ggsave("supplementary/figs1-ld-decay.png", height = 8, width = 6.5, 
        units = "in", dpi = 300)
-
-ggplot(ld, aes(x = distance, y = R2)) + geom_hex() +
-  theme_bw() + facet_wrap("CHR_A", scales = "free_x", ncol = 2)

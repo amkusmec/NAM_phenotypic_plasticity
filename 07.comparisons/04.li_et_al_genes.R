@@ -1,7 +1,5 @@
-setwd("~/gxe-gwas2")
-
 library(GenomicRanges)
-cv <- read.csv("~/gxe-gwas/data/floweringcv_qtl.csv")
+cv <- read.csv("data/floweringcv_qtl.csv")
 cv <- subset(cv, DACV == "_" | DSCV == "_")
 cv$upper <- 1e6*cv$upper
 cv$lower <- 1e6*cv$lower
@@ -9,7 +7,7 @@ cv$lower <- 1e6*cv$lower
 cv_ranges <- with(cv, GRanges(seqnames = chr,
                               ranges = IRanges(start = upper, end = lower)))
 
-gff <- read.delim("~/anno/ZmB73_5b_FGS.gff", comment.char = "#", header = FALSE)
+gff <- read.delim("data/ZmB73_5b_FGS.gff", comment.char = "#", header = FALSE)
 gff <- gff[gff$V3 == "gene", c(1, 4, 5, 9)]
 gff$V9 <- as.character(gff$V9)
 gff$V9 <- unlist(str_split(gff$V9, ";"))[seq(1, 3*nrow(gff), 3)]

@@ -1,12 +1,9 @@
-setwd("~/gxe-gwas2")
-
 source("00.load-packages.R")
 library(GenomicRanges)
 
 
 # Prep the significant SNPs -----------------------------------------------
-sig <- readRDS("gwas-results-iqr/sig-snps.rds") #%>%
-  # filter(Phenotype != "GDDDaystoSilk", Phenotype != "TasselPrimaryBranches")
+sig <- readRDS("gwas-results-iqr/sig-snps.rds")
 mranges <- sig %>%
   filter(Type == "MainEffect") %>%
   with(., GRanges(seqnames = Chromosome,
@@ -41,7 +38,6 @@ geneRanges <- with(gff, GRanges(seqnames = chr,
 
 # Control and storage variables -------------------------------------------
 windows <- c(2e3, 5e3, 1e4, 1.5e4, 2e4, 3e4, 4e4, 5e4)
-# windows <- c(2e3, 5e3, 1e4, 1.5e4, 2e4, 3e4, 4e4, 5e4, 1e5, 2e5, 2.5e5, 5e5, 7.5e5, 1e6)
 overlaps <- vector(mode = "numeric", length = length(windows))
 totals <- vector(mode = "numeric", length = length(windows))
 

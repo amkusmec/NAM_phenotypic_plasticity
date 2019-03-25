@@ -1,5 +1,3 @@
-setwd("~/gxe-gwas2")
-
 source("00.load-packages.R")
 library(scales)
 
@@ -30,8 +28,6 @@ totals <- percentages %>%
   count(Phenotype)
 percentages <- percentages %>%
   mutate(Phenotype = rep(lbls, totals$nn))
-# percentages$Phenotype <- factor(percentages$Phenotype, ordered = TRUE,
-#                                 levels = rev(lbls))
 
 # Plot
 f3a <- ggplot(percentages, aes(x = Phenotype, y = n, fill = Type)) + theme_bw() +

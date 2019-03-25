@@ -1,5 +1,3 @@
-setwd("~/gxe-gwas2")
-
 source("00.load-packages.R")
 library(GenomicRanges)
 library(scales)
@@ -17,7 +15,7 @@ mine <- c("UpperLeafAngle", "CobDiameter", "DaystoSilk", "DaysToTassel",
 
 
 # Prep the Wallace dataset ------------------------------------------------
-wallace <- read_delim("~/gxe-gwas/data/Wallace_etal_2014_PLoSGenet_GWAS_hits-150112.txt",
+wallace <- read_delim("data/Wallace_etal_2014_PLoSGenet_GWAS_hits-150112.txt",
                       delim = "\t") %>%
   filter(trait %in% keep)
 for (i in seq_along(keep)) {

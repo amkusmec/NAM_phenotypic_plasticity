@@ -1,7 +1,8 @@
 install.packages(c("tidyverse", "doParallel", "foreach", "iterators", 
                    "devtools", "car", "bigmemory", "biganalytics", 
                    "argparse", "Rcpp", "RcppEigen", "RcppParallel", 
-                   "BiocManager"))
+                   "BiocManager", "VennDiagram", "scales", "lawstat", 
+                   "readxl"))
 
 devtools::install_github("lian0090/FW")
 devtools::install_github("amkusmec/FarmCPUpp")

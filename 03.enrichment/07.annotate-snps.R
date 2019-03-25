@@ -1,18 +1,16 @@
-setwd("~/gxe-gwas2")
-
 source("00.load-packages.R")
 library(GenomicRanges)
 
 
 # Data loading and clean-up -----------------------------------------------
 ### SNPs
-snps <- read_delim("~/gxe-gwas/data/geno_2M.map", col_names = FALSE, 
+snps <- read_delim("data/geno_2M.map", col_names = FALSE, 
                    delim = "\t", progress = FALSE) %>%
   select(X2, X1, X4)
 names(snps) <- c("snpid", "chr", "pos")
 
 ### Annotations
-source("~/utils/R/get_fgs_intron_exon.R")
+source("lib/get_fgs_intron_exon.R")
 fgs <- get_fgs_intron_exon()
 genes <- as_data_frame(fgs[["gene"]])
 exons <- as_data_frame(fgs[["exon"]])
@@ -51,8 +49,8 @@ downstream <- genes %>%
   mutate(start = end, end = end + 5000)
 
 # HS sites
-hs <- bind_rows(read_delim("~/gxe-gwas/data/hs-sites/MNaseHS.Ranges.CrossMap.bed", delim = "\t", col_names = FALSE),
-                read_delim("~/gxe-gwas/data/hs-sites/MNaseHS.Root.bed", delim = "\t", col_names = FALSE)) %>%
+hs <- bind_rows(read_delim("data/MNaseHS.Ranges.CrossMap.bed", delim = "\t", col_names = FALSE),
+                read_delim("data/MNaseHS.Root.bed", delim = "\t", col_names = FALSE)) %>%
   mutate(X1 = as.numeric(as.character(X1))) %>%
   filter(!is.na(X1))
 names(hs) <- c("chr", "start", "end")

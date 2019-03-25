@@ -1,4 +1,3 @@
-setwd("~/gxe-gwas2/data")
 source("../00.load-packages.R")
 
 for (o in c("bp", "mf", "cc")) {

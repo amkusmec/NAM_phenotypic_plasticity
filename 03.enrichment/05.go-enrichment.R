@@ -1,11 +1,9 @@
-setwd("~/gxe-gwas2")
-
 source("00.load-packages.R")
 
 
 # Prep candidate genes and orthologs --------------------------------------
 candidates <- readRDS("gwas-results-iqr/candidate-genes.rds")
-ortho <- read_csv("~/anno/at_orthologs.csv")
+ortho <- read_csv("data/at_orthologs.csv")
 names(ortho) <- make.names(names(ortho))
 ortho <- ortho %>% 
   filter(Arabidopsis.thaliana.gene.stable.ID != "") %>%
@@ -13,7 +11,7 @@ ortho <- ortho %>%
 
 
 # Prep the GO annotations -------------------------------------------------
-go <- read_delim("~/anno/ATH_GO_SLIM2.txt", delim = "\t", progress = FALSE) %>%
+go <- read_delim("data/ATH_GO_SLIM2.txt", delim = "\t", progress = FALSE) %>%
   select(Locus.name, GO.term, GO.ID, Ontology) %>%
   mutate(key = paste0(Locus.name, GO.ID)) %>%
   group_by(key) %>%

@@ -1,5 +1,3 @@
-setwd("~/gxe-gwas2")
-
 library(tidyverse)
 library(readxl)
 library(GenomicRanges)

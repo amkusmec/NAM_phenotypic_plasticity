@@ -1,5 +1,3 @@
-setwd("~/gxe-gwas2")
-
 source("00.load-packages.R")
 
 # Load and prep data ------------------------------------------------------

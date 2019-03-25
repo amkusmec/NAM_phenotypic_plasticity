@@ -26,7 +26,7 @@ vranges <- sig %>%
 
 
 # Prep the genes ----------------------------------------------------------
-gff <- read_delim("~/anno/ZmB73_5b_FGS.gff", comment = "#", delim = "\t", 
+gff <- read_delim("../data/ZmB73_5b_FGS.gff", comment = "#", delim = "\t", 
                   progress = FALSE, col_names = FALSE) %>%
   filter(X3 == "gene", !is.na(X1)) %>%
   select(X1, X4, X5, X9) %>%

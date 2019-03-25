@@ -15,12 +15,12 @@ cat(paste0("Loading phenotype data for ", args$pheno, "."), "\n")
 myY <- readRDS(paste0("phenotypes/", args$pheno, "_IQR.rds"))
 
 cat("Loading covariates.\n")
-myQ <- readRDS("~/gxe-gwas/data/covariates6k.rds")
+myQ <- readRDS("covariates6k.rds")
 rownames(myQ) <- myQ$taxa
 myQ <- myQ[, -1]
 
 cat("Loading genotype map.\n")
-myGM <- read.table("~/gxe-gwas/data/geno_2M.map", header = FALSE, 
+myGM <- read.table("geno_2M.map", header = FALSE, 
                    stringsAsFactors = FALSE)
 myGM <- myGM[, c(2, 1, 4)]
 names(myGM) <- c("SNP", "Chromosome", "Position")
@@ -51,8 +51,4 @@ for (j in 2:ncol(myY)) {
     setwd("~/gxe-gwas2/gwas-results-iqr/VarE")
   }
   write_results(result)
-  
-  # Report and exit ---------------------------------------------------------
-  runtime <- end.time - start.time
-  system(paste0("python3 ~/mlmm-package/send_email.py -s '237 FarmCPU++ Finished - ", runtime, " s'"))
 }

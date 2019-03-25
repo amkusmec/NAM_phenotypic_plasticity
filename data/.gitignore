@@ -42,3 +42,6 @@ tidy_traitMatrix.rds
 tidy_traitMatrix_IQR.rds
 tidy_traitMatrix_IQR_AK.rds
 traitMatrix_maize282NAM_v15-130212.txt
+ZmB73_5b_FGS.gff
+covariates6k.rds
+geno_2M.map

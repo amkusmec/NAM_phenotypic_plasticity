@@ -1,6 +1,3 @@
-setwd("~/gxe-gwas2")
-# Master process ID: 40691
-
 source("00.load-packages.R")
 library(parallel)
 library(doParallel)

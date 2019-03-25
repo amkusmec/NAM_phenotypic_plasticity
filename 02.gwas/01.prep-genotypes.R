@@ -4,7 +4,7 @@ library(bigmemory)
 library(biganalytics)
 
 # Read the map first to get column names
-myGM <- read.table("~/gxe-gwas/data/geno_2M.map", header = FALSE)
+myGM <- read.table("geno_2M.map", header = FALSE)
 myGM <- myGM[, c(2, 1, 4)]
 names(myGM) <- c("SNP", "Chromosome", "Position")
 myGM$SNP <- paste0("X", myGM$SNP)
@@ -18,5 +18,3 @@ myGD <- read.big.matrix("geno_2M.xmat", type = "double", sep = "\t", header = TR
 # Save the pointer for faster access when performing GWAS
 desc <- describe(myGD)
 dput(desc, "geno_2M_pointer.desc")
-
-system("python3 ~/mlmm-package/send_email.py -s '237 Genotype processing complete'")

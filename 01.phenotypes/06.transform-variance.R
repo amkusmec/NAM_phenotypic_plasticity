@@ -1,5 +1,3 @@
-setwd("~/gxe-gwas2")
-
 source("00.load-packages.R")
 
 # Data files and phenotype list -------------------------------------------
@@ -25,16 +23,6 @@ for (f in seq_along(files)) {
     inner_join(., v, by = "Taxa") %>%
     right_join(., taxa, by = "Taxa")
   names(d2)[2:4] <- paste0(phenos[f], c("MainEffect", "Slope", "VarE"))
-  # g <- traits %>%
-  #   filter(Phenotype == phenos[f]) %>%
-  #   group_by(Genotype) %>%
-  #   dplyr::summarise(MainEffect = mean(Measure, na.rm = TRUE)) %>%
-  #   dplyr::rename(Taxa = Genotype)
-  # b <- tibble(Taxa = d$VARlevels, Slope = d$b[, 1] + 1)
-  # d2 <- right_join(g, b, by = "Taxa") %>%
-  #   right_join(., v, by = "Taxa") %>%
-  #   right_join(., taxa, by = "Taxa")
-  # names(d2)[2:4] <- paste0(phenos[f], c("MainEffect", "Slope", "VarE"))
   
   saveRDS(d2, paste0("data/phenotypes/", phenos[f], "_IQR.rds"))
 }
